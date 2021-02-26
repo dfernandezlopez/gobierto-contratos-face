@@ -12,6 +12,7 @@ require "active_record/railtie"
 require "rails/test_unit/railtie"
 require "action_controller/railtie"
 require "action_view/railtie"
+require "active_job/railtie"
 
 # External dependencies
 require "csv"
@@ -30,7 +31,9 @@ module OpenLicitaciones
       "#{config.root}/lib",
     ]
 
+    config.cache_store = :redis_store, "redis://localhost:6379/0"
     config.autoload_paths += required_paths
     config.eager_load_paths += required_paths
+    config.active_job.queue_adapter = :sidekiq
   end
 end
