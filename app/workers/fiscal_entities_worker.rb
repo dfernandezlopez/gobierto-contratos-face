@@ -3,10 +3,11 @@ class FiscalEntitiesWorker
 
   sidekiq_options queue: :critical, retry: 3
 
-  def perform(items)
+  def perform(items, dirs3_bd)
     @start_time = Time.now
     @log_file = "items_dir3"
     @base_url = "https://face.gob.es/api/v2/administraciones"
+    @dirs3_bd = dirs3_bd
     @items = items
     @new_parents_items = []
     @ignored_parents_items = []
@@ -25,11 +26,10 @@ class FiscalEntitiesWorker
   private
 
   def process_entities
-    @dirs3_bd = Hash[FiscalEntity.pluck(:dir3, :id).collect { |x, y| [x, y] }]
-    @items.each do |item|
-      @aux = []
-      page_hierarchy = 1
+    @aux = []
+    page_hierarchy = 1
 
+    @items.each do |item|
       loop do
         hierarchy = call_api_v2(item, page_hierarchy)
         @aux.concat(hierarchy.map { |i| i }) unless hierarchy.empty?

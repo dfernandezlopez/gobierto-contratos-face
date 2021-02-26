@@ -5,6 +5,7 @@ class FiscalEntities
     @level = level
     @base_url = "https://face.gob.es/api/v2/administraciones"
     @items = []
+    @dirs3_bd = Hash[FiscalEntity.pluck(:dir3, :id).collect { |x, y| [x, y] }]
   end
 
   def import_new_entities
@@ -12,32 +13,45 @@ class FiscalEntities
 
     if @level
       get_dir3(@level)
+
+      if @items >= 99
+        distribute_arrays(100)
+      else
+        distribute_arrays(1)
+      end
     else
       5.times do
         get_dir3(level_index)
         level_index += 1
       end
+      distribute_arrays(100)
     end
 
-    FiscalEntitiesWorker.perform_async(@items)
+    @items.each do |items|
+      FiscalEntitiesWorker.perform_async(items, @dirs3_bd)
+    end
   end
 
   private
 
+  def distribute_arrays(number_items)
+    @items = @items.each_slice(number_items).to_a
+  end
+
   def get_dir3(level)
-    page = 1
+    @page = 1
 
     loop do
-      response = call_api_v1(level, page)
+      response = call_api_v1(level)
       @items.concat(response.map { |i| i["codigo_dir"] }) unless response.empty?
-      page += 1
+      @page += 1
       break unless response.count.positive?
     end
   end
 
-  def call_api_v1(level, page)
+  def call_api_v1(level)
     begin
-      JSON.parse(Faraday.get("#{@base_url}?nivel=#{level}&page=#{page}").body)["items"]
+      JSON.parse(Faraday.get("#{@base_url}?nivel=#{level}&page=#{@page}").body)["items"]
     rescue StandardError => e
       puts e
       Rails.logger.error e
