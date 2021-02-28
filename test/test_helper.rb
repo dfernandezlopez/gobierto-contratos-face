@@ -11,10 +11,10 @@ require "capybara/rails"
 require "capybara/minitest"
 require "minitest/mock"
 
-require "support/fiscal_entity_factory"
+require_relative "./support/fiscal_entity_factory"
 
 VCR.configure do |config|
-  config.cassette_library_dir = "fixtures/cassettes"
+  config.cassette_library_dir = "test/cassettes"
   config.hook_into :webmock
   config.ignore_localhost = true
 end

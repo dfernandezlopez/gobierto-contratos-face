@@ -10,11 +10,14 @@ class FiscalEntities
 
   def import_new_entities
     level_index = 1
+    @log_file = "dir3_to_process"
+
+    Rails.logger = Logger.new "#{Rails.root}/log/#{@log_file}.log"
 
     if @level
       get_dir3(@level)
 
-      if @items >= 99
+      if @items.size >= 99
         distribute_arrays(100)
       else
         distribute_arrays(1)
@@ -55,7 +58,18 @@ class FiscalEntities
     rescue StandardError => e
       puts e
       Rails.logger.error e
-      execution_log
+      execution_log_dir3
     end
+  end
+
+  def execution_log_dir3
+    puts "These are the dir3 items to processs, see in this log: #{@log_file}"
+    puts "All dir3s created and ignored can be seen in: items_dir3.log"
+    Rails.logger.info "#######################################################################################################"
+    Rails.logger.info "#######################################################################################################"
+    Rails.logger.info "#######################################################################################################"
+    Rails.logger.info "*************************************dir3 items to processs********************************************"
+    Rails.logger.info @items.empty? ? "no item to process" : @items.each_slice(15).to_a.map { |a| a.push("\n") }.join("|")
+    Rails.logger.info "*******************************************************************************************************"
   end
 end

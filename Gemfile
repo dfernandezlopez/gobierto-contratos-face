@@ -40,6 +40,7 @@ group :test do
   gem "capybara"
   gem "cuprite"
   gem "launchy"
+  gem "minitest"
   gem "mocha"
   gem "selenium-webdriver"
   gem "timecop"

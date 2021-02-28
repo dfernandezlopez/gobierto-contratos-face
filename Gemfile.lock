@@ -311,6 +311,7 @@ DEPENDENCIES
   mechanize
   memory_profiler
   mimemagic
+  minitest
   mocha
   oj
   pg (>= 0.18, < 2.0)
