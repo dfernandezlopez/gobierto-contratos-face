@@ -2,6 +2,10 @@ require_relative "../test_helper"
 require_relative "../../app/services/fiscal_entities"
 
 class FiscalEntitiesTest < ActiveSupport::TestCase
+  def setup
+    Sidekiq::Testing.fake!
+  end
+
   def entities_service
     FiscalEntities.new(1)
   end

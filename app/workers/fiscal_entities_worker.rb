@@ -144,8 +144,4 @@ class FiscalEntitiesWorker
       execution_log
     end
   end
-
-  def find_entity(item)
-    FiscalEntity.find_by(dir3: item)
-  end
 end

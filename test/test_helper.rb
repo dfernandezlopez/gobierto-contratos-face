@@ -10,6 +10,7 @@ require "webmock/minitest"
 require "capybara/rails"
 require "capybara/minitest"
 require "minitest/mock"
+require "sidekiq/testing"
 
 require_relative "./support/fiscal_entity_factory"
 
