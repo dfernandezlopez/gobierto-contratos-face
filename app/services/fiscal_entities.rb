@@ -16,19 +16,14 @@ class FiscalEntities
 
     if @level
       get_dir3(@level)
-
-      if @items.size >= 99
-        distribute_arrays(100)
-      else
-        distribute_arrays(1)
-      end
     else
       5.times do
         get_dir3(level_index)
         level_index += 1
       end
-      distribute_arrays(100)
     end
+
+    format_array
 
     @items.each do |items|
       FiscalEntitiesWorker.perform_async(items, @dirs3_bd)
@@ -36,6 +31,14 @@ class FiscalEntities
   end
 
   private
+
+  def format_array
+    if @items.size >= 99
+      distribute_arrays(100)
+    else
+      distribute_arrays(1)
+    end
+  end
 
   def distribute_arrays(number_items)
     @items = @items.each_slice(number_items).to_a
