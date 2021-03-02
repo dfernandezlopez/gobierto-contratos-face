@@ -1,0 +1,179 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://face.gob.es/api/v2/administraciones?nivel=1&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Feb 2021 17:29:05 GMT
+      Server:
+      - Microsoft-IIS/5.0
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Xss-Protection:
+      - 1;mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin,strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"codigo_dir":"E04585801","nombre_admon":"Ministerio de Asuntos
+        Exteriores y de Cooperaci\u00f3n"},{"codigo_dir":"E05024101","nombre_admon":"Ministerio
+        de Educaci\u00f3n y Formaci\u00f3n Profesional"},{"codigo_dir":"E04921401","nombre_admon":"Ministerio
+        de Educaci\u00f3n, Cultura y Deporte"},{"codigo_dir":"E00003601","nombre_admon":"Ministerio
+        de Fomento"},{"codigo_dir":"E04921301","nombre_admon":"Ministerio de Hacienda
+        y Administraciones Publicas"},{"codigo_dir":"E04921601","nombre_admon":"Ministerio
+        de Industria, Energia y Turismo"},{"codigo_dir":"E05024401","nombre_admon":"Ministerio
+        de Agricultura, Pesca y Alimentaci\u00f3n"},{"codigo_dir":"E05024901","nombre_admon":"Ministerio
+        de Econom\u00eda y Empresa"},{"codigo_dir":"E04921501","nombre_admon":"Ministerio
+        de Empleo y Seguridad Social"},{"codigo_dir":"E00004101","nombre_admon":"Ministerio
+        de la Presidencia"},{"codigo_dir":"E04990301","nombre_admon":"Ministerio de
+        Agricultura y Pesca, Alimentaci\u00f3n y Medio Ambiente"},{"codigo_dir":"E00003801","nombre_admon":"Ministerio
+        del Interior"},{"codigo_dir":"E04990401","nombre_admon":"Ministerio de la
+        Presidencia y para las Administraciones Territoriales"},{"codigo_dir":"E04921701","nombre_admon":"Ministerio
+        de Agricultura, Alimentacion y Medio Ambiente"},{"codigo_dir":"E00003901","nombre_admon":"Ministerio
+        de Justicia"},{"codigo_dir":"E04921901","nombre_admon":"Ministerio de Sanidad,
+        Servicios Sociales e Igualdad"},{"codigo_dir":"E04990101","nombre_admon":"Ministerio
+        de Hacienda y Funci\u00f3n P\u00fablica"},{"codigo_dir":"EA0008567","nombre_admon":"Presidencia
+        del Gobierno"},{"codigo_dir":"E04990501","nombre_admon":"Ministerio de Econom\u00eda,
+        Industria y Competitividad"},{"codigo_dir":"E04990201","nombre_admon":"Ministerio
+        de Energ\u00eda, Turismo y Agenda Digital"},{"codigo_dir":"E00003301","nombre_admon":"Ministerio
+        de Defensa"},{"codigo_dir":"E04921801","nombre_admon":"Ministerio de Economia
+        y Competitividad"},{"codigo_dir":"E05023901","nombre_admon":"Ministerio de
+        Asuntos Exteriores, Uni\u00f3n Europea y Cooperaci\u00f3n"},{"codigo_dir":"E05025101","nombre_admon":"Ministerio
+        de Ciencia, Innovaci\u00f3n y Universidades"},{"codigo_dir":"E05024801","nombre_admon":"Ministerio
+        de Cultura y Deporte"}]}'
+  recorded_at: Sun, 28 Feb 2021 17:29:05 GMT
+- request:
+    method: get
+    uri: https://face.gob.es/api/v2/administraciones?nivel=1&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Feb 2021 17:29:06 GMT
+      Server:
+      - Microsoft-IIS/5.0
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Xss-Protection:
+      - 1;mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin,strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"codigo_dir":"E05024201","nombre_admon":"Ministerio de Trabajo,
+        Migraciones y Seguridad Social"},{"codigo_dir":"E05024701","nombre_admon":"Ministerio
+        para la Transici\u00f3n Ecol\u00f3gica"},{"codigo_dir":"E05065601","nombre_admon":"Ministerio
+        de Transportes, Movilidad y Agenda Urbana"},{"codigo_dir":"E05071301","nombre_admon":"Ministerio
+        de Ciencia e Innovaci\u00f3n"},{"codigo_dir":"E05071601","nombre_admon":"Ministerio
+        de Igualdad"},{"codigo_dir":"E05068001","nombre_admon":"Ministerio para la
+        Transici\u00f3n Ecol\u00f3gica y el Reto Demogr\u00e1fico"},{"codigo_dir":"E05024301","nombre_admon":"Ministerio
+        de Industria, Comercio y Turismo"},{"codigo_dir":"E05068901","nombre_admon":"Ministerio
+        de Asuntos Econ\u00f3micos y Transformaci\u00f3n Digital"},{"codigo_dir":"E05072201","nombre_admon":"Ministerio
+        de Consumo"},{"codigo_dir":"E05072501","nombre_admon":"Ministerio de Inclusi\u00f3n,
+        Seguridad Social y Migraciones"},{"codigo_dir":"E05067101","nombre_admon":"Ministerio
+        de la Presidencia, Relaciones Con las Cortes y Memoria Democr\u00e1tica"},{"codigo_dir":"E05024501","nombre_admon":"Ministerio
+        de la Presidencia, Relaciones Con las Cortes e Igualdad"},{"codigo_dir":"E05024601","nombre_admon":"Ministerio
+        de Pol\u00edtica Territorial y Funci\u00f3n P\u00fablica"},{"codigo_dir":"E05070101","nombre_admon":"Ministerio
+        de Sanidad"},{"codigo_dir":"E05066501","nombre_admon":"Ministerio de Trabajo
+        y Econom\u00eda Social"},{"codigo_dir":"E05024001","nombre_admon":"Ministerio
+        de Hacienda"},{"codigo_dir":"E05025001","nombre_admon":"Ministerio de Sanidad,
+        Consumo y Bienestar Social"},{"codigo_dir":"E05070401","nombre_admon":"Ministerio
+        de Derechos Sociales y Agenda 2030"},{"codigo_dir":"E05073401","nombre_admon":"Ministerio
+        de Universidades"}]}'
+  recorded_at: Sun, 28 Feb 2021 17:29:06 GMT
+- request:
+    method: get
+    uri: https://face.gob.es/api/v2/administraciones?nivel=1&page=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Feb 2021 17:29:07 GMT
+      Server:
+      - Microsoft-IIS/5.0
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      X-Xss-Protection:
+      - 1;mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin,strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - User-Agent
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"items":[]}'
+  recorded_at: Sun, 28 Feb 2021 17:29:07 GMT
+recorded_with: VCR 6.0.0

@@ -17,7 +17,11 @@ gem "pry"
 gem "pry-rails"
 gem "rails", "~> 6.1"
 gem "rollbar"
+gem 'redis'
+gem 'redis-rails'
+gem 'redis-store'
 gem "mimemagic"
+gem "sidekiq"
 
 group :development, :test do
   gem "pry-remote"
@@ -36,6 +40,7 @@ group :test do
   gem "capybara"
   gem "cuprite"
   gem "launchy"
+  gem "minitest"
   gem "mocha"
   gem "selenium-webdriver"
   gem "timecop"
